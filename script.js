@@ -4,7 +4,7 @@ const CONFIG = {
   descripcion: "Developer · Designer · R/S",
   ubicacion: "Perú",
   fraseCorta: "No sigo caminos. Creo los míos.",
-  acercaDeMi: "Desarrollador frontend apasionado por crear experiencias digitales modernas, rápidas y atractivas. Me enfoco en escribir código limpio, diseños minimalistas y soluciones que realmente funcionan.",
+  acercaDeMi: "Desarrollando proyectos personales y para clientes mientras continúo perfeccionando mis habilidades, explorando nuevas tecnologías y creando interfaces modernas con un enfoque en código limpio y una excelente experiencia de usuario.",
 
   estadisticas: { proyectos: 3, logros: 19, desde: 2024 },
 
@@ -17,22 +17,22 @@ const CONFIG = {
     {
       imagen: "assets/proyectos/proyecto1.jpg",
       etiqueta: "Roblox",
-      titulo: "Dashboard Admin",
-      descripcion: "Panel administrativo con estadísticas en tiempo real.",
+      titulo: "01 · Sandeo Club",
+      descripcion: "Juego desarrollado para una comunidad con un diseño moderno, enfoque en la experiencia del usuario y funcionalidades personalizadas. Un proyecto pensado para ofrecer una navegación rápida, intuitiva y escalable.",
       estado: "normal"
     },
     {
       imagen: "assets/proyectos/proyecto2.jpg",
       etiqueta: "Roblox Studio",
-      titulo: "Proyecto 1",
-      descripcion: "Landing page moderna para startups y negocios.",
+      titulo: "02 · Sistemas Personales",
+      descripcion: "Colección de sistemas desarrollados para juegos, incluyendo rachas, comandos, interfaces (UI) y otras herramientas personalizadas. El proyecto continúa en constante mantenimiento y seguirá recibiendo nuevas funciones y mejoras.",
       estado: "normal"
     },
     {
       imagen: "assets/proyectos/proyecto3.jpg",
       etiqueta: "Node.js",
       titulo: "Bot de Discord",
-      descripcion: "Bot multipropósito con comandos, música y gestión de servidores.",
+      descripcion: "Un nuevo proyecto ya está en planificación. La idea, el enfoque y los objetivos están definidos; el desarrollo comenzará próximamente para convertir el concepto en una experiencia funcional y de alta calidad.",
       estado: "proximamente"
     }
   ],
