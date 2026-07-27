@@ -68,9 +68,9 @@ const CONFIG = {
 
   /* ---- EXPERIENCIA (3 pliegues) ---- */
   experiencia: [
-    { periodo: "2024 - Actualidad", titulo: "Desarrollador Frontend Freelance", texto: "Trabajando en proyectos personales y para clientes alrededor del mundo." },
-    { periodo: "2023 - 2024", titulo: "Desarrollo de proyectos personales", texto: "Aprendiendo, practicando y creando soluciones reales." },
-    { periodo: "2022 - 2023", titulo: "Inicios en Roblox Studio", texto: "Primeros pasos construyendo experiencias y sistemas dentro de Roblox." }
+    { periodo: "2026 - Actualidad", titulo: "Desarrollo de proyectos personales", texto: "Desarrollando proyectos personales y para clientes mientras continúo perfeccionando mis habilidades, explorando nuevas tecnologías y creando interfaces modernas con un enfoque en código limpio y una excelente experiencia de usuario." },
+    { periodo: "2025 - 2026", titulo: "Desarrollo de nuevos proyectos", texto: "Segui con la experiencia de crear nuevos juegos y aprender nuevas cosas, por lo cual se forjo el proyecto Bubaloo junto a Diego & Gerardo los cuales ahora son muy amigos mios." },
+    { periodo: "2024 - 2025", titulo: "Mis inicios en Roblox Studio", texto: "Primeros pasos construyendo experiencias dentro de Roblox Studios, fue junto a muy buenos amigos Leo, Manuel & Luan, en el cual se forjo nuestro primer proyecto llamado La casona." }
   ]
 };
 /* =========================================================== */
