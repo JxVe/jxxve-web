@@ -14,13 +14,16 @@
 }
 
 html{ scroll-behavior:smooth; }
-body{
-     background:
-       linear-gradient(180deg, rgba(6,5,5,0.82), rgba(6,5,5,0.93)),
-       url('assets/fondo.jpg') center/cover no-repeat fixed;
-     color:var(--texto); min-height:100vh; overflow-x:hidden;
-   }
+body{ background:var(--bg); color:var(--texto); min-height:100vh; overflow-x:hidden; }
+
 .oculto{ display:none !important; }
+
+/* El reproductor real de YouTube se mantiene fuera de la vista:
+   sigue sonando pero nunca se muestra en pantalla. */
+#youtube-player{
+  position:fixed; left:-9999px; top:-9999px;
+  width:2px; height:2px; opacity:0; pointer-events:none;
+}
 
 /* ===================== PANTALLA DE ENTRADA (animación intacta) ===================== */
 #pantalla-inicio{ height:100vh; display:flex; align-items:center; justify-content:center; position:relative; background:radial-gradient(circle at center, #140808, #060505); }
@@ -53,7 +56,7 @@ body{
 /* ===================== DASHBOARD (sin sidebar) ===================== */
 .dashboard{
   position:relative; z-index:1;
-  max-width:1560px; margin:0 auto; padding:36px 44px 30px;
+  max-width:1560px; margin:0 auto; padding:30px 44px 24px;
   display:grid;
   grid-template-columns:1.55fr 1fr;
   grid-template-areas:
@@ -62,7 +65,7 @@ body{
     "player redes"
     "player frase"
     "footer footer";
-  gap:22px 28px;
+  gap:16px 28px;
   align-items:start;
 }
 
@@ -80,8 +83,8 @@ body{
 
 /* --- Hero / perfil --- */
 .hero-perfil{
-  grid-area:hero; position:relative; min-height:560px;
-  display:flex; align-items:center; gap:46px; padding:20px 10px; overflow:visible;
+  grid-area:hero; position:relative; min-height:420px;
+  display:flex; align-items:center; gap:40px; padding:14px 10px; overflow:visible;
 }
 .hero-fondo-texto{
   position:absolute; left:-2%; top:2%; font-size:clamp(5.5rem,11vw,10.5rem); font-weight:900;
@@ -93,7 +96,7 @@ body{
   opacity:0.9;
 }
 
-.avatar-wrap{ position:relative; z-index:2; width:270px; height:270px; flex-shrink:0; }
+.avatar-wrap{ position:relative; z-index:2; width:230px; height:230px; flex-shrink:0; }
 .avatar-glow{
   position:absolute; inset:20px; border-radius:50%; overflow:hidden;
   border:2px solid var(--rojo); box-shadow:0 0 25px 4px rgba(226,39,60,0.55), 0 0 70px 12px rgba(226,39,60,0.28), inset 0 0 30px rgba(226,39,60,0.35);
@@ -163,15 +166,47 @@ body{
 /* --- Columna lateral derecha --- */
 .panel-lateral{ grid-area:lateral; display:flex; flex-direction:column; gap:20px; }
 
-/* --- Tecnologías --- */
-.tech-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+/* --- Lenguajes dominados --- */
+.tech-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
 .tech-item{
-  display:flex; flex-direction:column; align-items:center; gap:6px; padding:12px 6px; border:1px solid var(--borde);
-  border-radius:10px; font-size:0.68rem; color:var(--texto-sec); text-align:center; background:rgba(255,255,255,0.02);
+  position:relative; overflow:hidden;
+  display:flex; flex-direction:column; align-items:center; gap:6px; padding:16px 6px; border:1px solid var(--borde);
+  border-radius:10px; font-size:0.72rem; color:var(--texto-sec); text-align:center; background:rgba(255,255,255,0.02);
+  cursor:pointer; font-family:inherit;
   transition:border-color .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease;
 }
 .tech-item:hover{ border-color:var(--rojo); color:var(--texto); transform:translateY(-2px); box-shadow:0 8px 18px rgba(226,39,60,0.18); }
-.tech-icono{ color:var(--rojo); font-size:1rem; }
+.tech-icono{ color:var(--rojo); font-size:1.05rem; font-weight:bold; letter-spacing:.5px; }
+.tech-nombre{ font-size:0.72rem; }
+.tech-porcentaje{ display:none; font-size:1rem; font-weight:bold; color:var(--rojo); letter-spacing:1px; }
+.tech-item.mostrar-porcentaje .tech-nombre{ display:none; }
+.tech-item.mostrar-porcentaje .tech-porcentaje{ display:block; }
+
+/* Efecto "pantalla malograda" (glitch) al cambiar entre nombre y porcentaje */
+.tech-item.glitch{ animation:glitch-corte .46s steps(2,end); }
+.tech-item.glitch::after{
+  content:""; position:absolute; inset:0; pointer-events:none; z-index:2;
+  background:repeating-linear-gradient(0deg, rgba(226,39,60,0.55) 0 2px, transparent 2px 5px);
+  mix-blend-mode:overlay; animation:glitch-lineas .46s steps(5,end);
+}
+.tech-item.glitch::before{
+  content:""; position:absolute; inset:0; pointer-events:none; z-index:2;
+  background:rgba(226,39,60,0.08);
+  animation:glitch-flash .46s steps(5,end);
+}
+@keyframes glitch-corte{
+  0%{ clip-path:inset(0 0 0 0); transform:translate(0,0); }
+  12%{ clip-path:inset(8% 0 62% 0); transform:translate(-3px,0); }
+  24%{ clip-path:inset(68% 0 4% 0); transform:translate(3px,0); }
+  36%{ clip-path:inset(30% 0 45% 0); transform:translate(-2px,0); }
+  48%{ clip-path:inset(0 0 0 0); transform:translate(0,0); }
+  60%{ clip-path:inset(52% 0 18% 0); transform:translate(3px,0); }
+  72%{ clip-path:inset(14% 0 58% 0); transform:translate(-3px,0); }
+  84%{ clip-path:inset(0 0 0 0); transform:translate(0,0); }
+  100%{ clip-path:inset(0 0 0 0); transform:translate(0,0); }
+}
+@keyframes glitch-lineas{ 0%,100%{ opacity:0; } 20%,60%{ opacity:0.7; } 40%,80%{ opacity:0.15; } }
+@keyframes glitch-flash{ 0%,100%{ opacity:0; } 30%,70%{ opacity:1; } 50%{ opacity:0; } }
 
 /* --- Reproductor --- */
 .reproductor{ grid-area:player; display:flex; align-items:center; gap:20px; }
