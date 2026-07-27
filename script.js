@@ -1,7 +1,7 @@
 /* ============ CONFIGURACIÓN — EDITA SOLO AQUÍ ============ */
 const CONFIG = {
   nombre: "Jxxve",
-  descripcion: "Developer · Designer · CEO • Aetlis Studios",
+  descripcion: "Builder · Designer · Roblox",
   ubicacion: "Perú",
 
   estadisticas: {
@@ -17,6 +17,7 @@ const CONFIG = {
     spotify:  "https://open.spotify.com/user/31t3pae44ophuhj5gr3zzfhrdaeu?si=d78e3680a56840eb",
     roblox:   "https://www.roblox.com/es/users/10643842680/profile",
     tiktok:   "https://www.tiktok.com/@sandeo_roblox?is_from_webapp=1&sender_device=pc",
+    github:   "https://github.com/JxVe",
     steam:    null
   },
 
@@ -28,7 +29,15 @@ const CONFIG = {
     youtubeId: "5-bvIn0rF5E",
     cancion: "Scars",
     artista: "Novulent"
-  }
+  },
+
+  // Lenguajes dominados: se muestran al hacer clic con efecto glitch
+  lenguajes: [
+    { id: "js",   nombre: "JavaScript", icono: "JS",   porcentaje: 80 },
+    { id: "css",  nombre: "CSS",        icono: "{ }",  porcentaje: 80 },
+    { id: "html", nombre: "HTML",       icono: "</>",  porcentaje: 90 },
+    { id: "lua",  nombre: "Lua",        icono: "λ",    porcentaje: 82 }
+  ]
 };
 /* =========================================================== */
 
@@ -39,7 +48,8 @@ const ICONOS = {
   spotify: `<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm4.4 14.4a.6.6 0 0 1-.8.2c-2.2-1.3-5-1.6-8.3-.9a.6.6 0 1 1-.3-1.2c3.6-.8 6.7-.5 9.2 1 .3.2.4.6.2.9zm1.2-2.8a.8.8 0 0 1-1 .3c-2.5-1.5-6.3-2-9.3-1.1a.8.8 0 1 1-.5-1.5c3.4-1 7.6-.5 10.5 1.2a.8.8 0 0 1 .3 1.1zm.1-2.9C14.8 9 8.9 8.8 6.2 9.6a1 1 0 1 1-.6-1.9c3.1-1 9.6-.7 13.4 1.5a1 1 0 0 1-1 1.7z"/></svg>`,
   roblox: `<svg viewBox="0 0 24 24"><path d="M4.5 3.5l16 4.3-4.3 16-16-4.3zM9 9.4l1.6 6 6-1.6-1.6-6z"/></svg>`,
   tiktok: `<svg viewBox="0 0 24 24"><path d="M14 2h3c.2 1.7 1.2 3.1 2.8 3.8.6.3 1.3.4 2 .4v3c-1.6 0-3-.4-4.3-1.2v6.6a5.9 5.9 0 1 1-5.9-5.9c.3 0 .6 0 .9.1v3.1a2.8 2.8 0 1 0 2 2.7V2z"/></svg>`,
-  steam: `<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-10 9.6l5.4 2.2a2.8 2.8 0 0 1 1.6-.5l2.4-3.5v-.1a3.7 3.7 0 1 1 3.7 3.7h-.1l-3.4 2.4a2.8 2.8 0 0 1-5.5.7L2.3 14.9A10 10 0 1 0 12 2zM8.4 17.5l-1.2-.5a2 2 0 0 0 3.7.8 2 2 0 0 0-1-2.6 2 2 0 0 0-1.5 2.3zm7-6.4a2.5 2.5 0 1 1 2.5-2.5 2.5 2.5 0 0 1-2.5 2.5z"/></svg>`
+  steam: `<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-10 9.6l5.4 2.2a2.8 2.8 0 0 1 1.6-.5l2.4-3.5v-.1a3.7 3.7 0 1 1 3.7 3.7h-.1l-3.4 2.4a2.8 2.8 0 0 1-5.5.7L2.3 14.9A10 10 0 1 0 12 2zM8.4 17.5l-1.2-.5a2 2 0 0 0 3.7.8 2 2 0 0 0-1-2.6 2 2 0 0 0-1.5 2.3zm7-6.4a2.5 2.5 0 1 1 2.5-2.5 2.5 2.5 0 0 1-2.5 2.5z"/></svg>`,
+  github: `<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.4-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.5-1.3.1-2.7 0 0 .8-.3 2.8 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .6 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .3.3.6.9.6 1.9v2.8c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg>`
 };
 
 /* ---------- Referencias DOM ---------- */
@@ -237,6 +247,41 @@ setInterval(() => {
   document.getElementById("tiempo-actual").textContent = formatearTiempo(actual);
   document.getElementById("tiempo-total").textContent = formatearTiempo(total);
 }, 500);
+
+
+/* ======================================================================
+   BLOQUE — Lenguajes dominados (glitch al mostrar el porcentaje)
+   ====================================================================== */
+(function iniciarLenguajes() {
+  const contenedor = document.getElementById("lenguajes-contenedor");
+  if (!contenedor) return;
+
+  CONFIG.lenguajes.forEach((lenguaje) => {
+    const item = document.createElement("button");
+    item.className = "tech-item";
+    item.type = "button";
+    item.innerHTML = `
+      <span class="tech-icono">${lenguaje.icono}</span>
+      <span class="tech-nombre">${lenguaje.nombre}</span>
+      <span class="tech-porcentaje">${lenguaje.porcentaje}%</span>
+    `;
+
+    item.addEventListener("click", () => {
+      if (item.classList.contains("en-transicion")) return;
+      item.classList.add("en-transicion", "glitch");
+
+      setTimeout(() => {
+        item.classList.toggle("mostrar-porcentaje");
+      }, 220);
+
+      setTimeout(() => {
+        item.classList.remove("glitch", "en-transicion");
+      }, 480);
+    });
+
+    contenedor.appendChild(item);
+  });
+})();
 
 
 /* ======================================================================
