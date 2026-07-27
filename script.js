@@ -25,7 +25,7 @@ const CONFIG = {
   discordUsuario: "jxxve",
 
   musica: {
-    youtubeId: "PON_AQUI_TU_ID_DE_YOUTUBE",
+    youtubeId: "https://www.youtube.com/watch?v=5-bvIn0rF5E&list=RD5-bvIn0rF5E&start_radio=1",
     cancion: "Scars",
     artista: "Novulent"
   }
