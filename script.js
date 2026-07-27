@@ -7,7 +7,7 @@ const CONFIG = {
   estadisticas: {
     proyectos: 3,
     logros: 7,
-    desde: 2023
+    desde: 2021
   },
 
   redes: {
@@ -34,7 +34,7 @@ const CONFIG = {
   // Lenguajes dominados: se muestran al hacer clic con efecto glitch
   lenguajes: [
     { id: "js",   nombre: "JavaScript", icono: "JS",   porcentaje: 50 },
-    { id: "css",  nombre: "CSS",        icono: "{ }",  porcentaje: 40 },
+    { id: "css",  nombre: "CSS",        icono: "{ }",  porcentaje: 60 },
     { id: "html", nombre: "HTML",       icono: "</>",  porcentaje: 90 },
     { id: "lua",  nombre: "Lua",        icono: "λ",    porcentaje: 82 }
   ]
