@@ -135,7 +135,7 @@ Object.entries(CONFIG.redes).forEach(([nombreRed, link]) => {
   redesContenedor.appendChild(item);
 });
 
-ubicacion.addEventListener("click", () => mostrarTooltip(ubicacion, "Localización: Próximamente"));
+ubicacion.addEventListener("click", () => mostrarTooltip(ubicacion, "Localización"));
 
 function copiarUsuarioDiscord(elemento, nombreVisible) {
   const usuario = CONFIG.discordUsuario;
