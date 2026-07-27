@@ -1,13 +1,13 @@
 /* ============ CONFIGURACIÓN — EDITA SOLO AQUÍ ============ */
 const CONFIG = {
   nombre: "Jxxve",
-  descripcion: "Builder · Designer · Roblox",
+  descripcion: "Developer · Designer · R/S",
   ubicacion: "Perú",
 
   estadisticas: {
-    proyectos: 20,
-    logros: 7,
-    desde: 2021
+    Proyectos: 3,
+    Edad: 19,
+    desde: 2023
   },
 
   redes: {
@@ -27,14 +27,14 @@ const CONFIG = {
 
   musica: {
     youtubeId: "5-bvIn0rF5E",
-    cancion: "Scars",
-    artista: "Novulent"
+    cancion: "Sigo Dañándoles los Días",
+    artista: "Alexio “La Bestia”"
   },
 
   // Lenguajes dominados: se muestran al hacer clic con efecto glitch
   lenguajes: [
-    { id: "js",   nombre: "JavaScript", icono: "JS",   porcentaje: 80 },
-    { id: "css",  nombre: "CSS",        icono: "{ }",  porcentaje: 80 },
+    { id: "js",   nombre: "JavaScript", icono: "JS",   porcentaje: 50 },
+    { id: "css",  nombre: "CSS",        icono: "{ }",  porcentaje: 40 },
     { id: "html", nombre: "HTML",       icono: "</>",  porcentaje: 90 },
     { id: "lua",  nombre: "Lua",        icono: "λ",    porcentaje: 82 }
   ]
