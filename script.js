@@ -5,8 +5,8 @@ const CONFIG = {
   ubicacion: "Perú",
 
   estadisticas: {
-    Proyectos: 3,
-    Edad: 19,
+    proyectos: 3,
+    logros: 7,
     desde: 2023
   },
 
