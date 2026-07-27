@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jxxve</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== Pantalla de entrada (LÓGICA Y ANIMACIÓN INTACTAS, no se tocó) ===== -->
+<div id="pantalla-inicio">
+  <button id="boton-entrar" aria-label="Entrar">
+    <span class="anillo"></span>
+    <span class="anillo anillo2"></span>
+    <span class="punto"></span>
+  </button>
+  <div class="esquina-texto" id="texto-avanzar"></div>
+</div>
+
+<div id="contenido" class="oculto">
+
+  <div class="fondo-textura" aria-hidden="true"></div>
+
+  <main class="dashboard">
+
+    <!-- ESTADO ONLINE -->
+    <header class="estado-online">
+      <span class="punto-online"></span>
+      <span class="texto-online">ONLINE</span>
+      <div class="mini-onda" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </header>
+
+    <!-- HERO / PERFIL -->
+    <section class="hero-perfil" id="perfil">
+      <span class="hero-fondo-texto" data-parallax aria-hidden="true">JXXVE</span>
+
+      <div class="avatar-wrap">
+        <span class="orbita orbita1"></span>
+        <span class="orbita orbita2"></span>
+        <span class="orbita-particula"></span>
+        <div class="avatar-glow">
+          <img src="assets/avatar.jpg" alt="Avatar de Jxxve" class="avatar-img">
+        </div>
+        <span class="badge-avatar" aria-hidden="true">✓</span>
+      </div>
+
+      <div class="perfil-info">
+        <h1 class="nombre-linea">
+          <span id="nombre-usuario"></span>
+          <span class="badge-nombre" aria-hidden="true">✓</span>
+        </h1>
+
+        <p class="descripcion" id="descripcion"></p>
+        <p class="tagline">Diseñando experiencias.<br>Construyendo mundos.</p>
+
+        <p class="ubicacion" id="ubicacion">📍 <span id="texto-ubicacion"></span></p>
+
+        <div class="stats-fila">
+          <div class="stat">
+            <span class="stat-valor" id="contador-vistas">0</span>
+            <span class="stat-label">Vistas</span>
+          </div>
+          <div class="stat">
+            <span class="stat-valor" id="stat-proyectos">0</span>
+            <span class="stat-label">Proyectos</span>
+          </div>
+          <div class="stat">
+            <span class="stat-valor" id="stat-logros">0</span>
+            <span class="stat-label">Logros</span>
+          </div>
+          <div class="stat">
+            <span class="stat-valor" id="stat-desde">0</span>
+            <span class="stat-label">Desde</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COLUMNA DERECHA: ACERCA DE MÍ + TECNOLOGÍAS -->
+    <aside class="panel-lateral">
+      <div class="panel acerca" id="acerca-panel">
+        <p class="panel-titulo">ACERCA DE MÍ <span class="deco">///</span></p>
+        <p class="panel-texto">
+          Creador digital apasionado por el diseño, la construcción y las experiencias
+          interactivas en Roblox. Siempre creando algo nuevo.
+        </p>
+        <button class="btn-ver-mas" id="btn-ver-mas">VER MÁS →</button>
+      </div>
+
+      <div class="panel tecnologias-panel">
+        <p class="panel-titulo">TECNOLOGÍAS <span class="deco">///</span></p>
+        <div class="tech-grid">
+          <div class="tech-item" title="Roblox Studio"><span class="tech-icono">◆</span>Roblox</div>
+          <div class="tech-item" title="Blender"><span class="tech-icono">◆</span>Blender</div>
+          <div class="tech-item" title="Photoshop"><span class="tech-icono">◆</span>Photoshop</div>
+          <div class="tech-item" title="After Effects"><span class="tech-icono">◆</span>After Effects</div>
+          <div class="tech-item" title="Lightroom"><span class="tech-icono">◆</span>Lightroom</div>
+          <div class="tech-item" title="Código"><span class="tech-icono">◆</span>Código</div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- REPRODUCTOR DE MÚSICA -->
+    <section class="panel reproductor" id="panel-musica">
+      <img src="assets/actividad.jpg" alt="" class="reproductor-portada" id="reproductor-portada">
+
+      <div class="reproductor-cuerpo">
+        <div class="reproductor-fila-superior">
+          <div class="reproductor-textos">
+            <p class="reproductor-titulo" id="reproductor-titulo">sin música</p>
+            <p class="reproductor-artista" id="reproductor-artista"></p>
+          </div>
+
+          <div class="ondas" id="ondas">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+
+        <div class="barra-tiempos">
+          <span id="tiempo-actual">0:00</span>
+          <div class="barra-fondo"><div class="barra-progreso" id="barra-progreso"></div></div>
+          <span id="tiempo-total">0:00</span>
+        </div>
+
+        <div class="controles-reproductor">
+          <button class="control-secundario" id="boton-shuffle" aria-label="Aleatorio">⤨</button>
+          <button class="control-secundario" id="boton-anterior" aria-label="Anterior">⏮</button>
+          <button id="boton-play-pause" class="boton-play" aria-label="Reproducir/Pausar">❚❚</button>
+          <button class="control-secundario" id="boton-siguiente" aria-label="Siguiente">⏭</button>
+          <button class="control-secundario" id="boton-repetir" aria-label="Repetir">⟲</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- COLUMNA DERECHA INFERIOR: REDES + FRASE -->
+    <aside class="panel-redes-cont">
+      <div class="panel redes-panel">
+        <p class="panel-titulo">REDES SOCIALES <span class="deco">///</span></p>
+        <div class="redes" id="redes-contenedor"></div>
+      </div>
+
+      <div class="panel frase-panel">
+        <span class="frase-grafico" aria-hidden="true"></span>
+        <p class="frase">"La creatividad es inteligencia divirtiéndose."</p>
+        <p class="frase-autor">— Albert Einstein</p>
+      </div>
+    </aside>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="pie">
+      <span class="linea-decorativa"></span>
+      <span class="pie-texto">© 2024 Jxxve. Todos los derechos reservados.</span>
+      <span class="linea-decorativa"></span>
+    </footer>
+
+  </main>
+
+</div>
+
+<div id="youtube-player"></div>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="script.js"></script>
+</body>
+</html>
