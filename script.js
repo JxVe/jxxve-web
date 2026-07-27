@@ -3,12 +3,39 @@ const CONFIG = {
   nombre: "Jxxve",
   descripcion: "Developer · Designer · R/S",
   ubicacion: "Perú",
+  fraseCorta: "No sigo caminos. Creo los míos.",
+  acercaDeMi: "Desarrollador frontend apasionado por crear experiencias digitales modernas, rápidas y atractivas. Me enfoco en escribir código limpio, diseños minimalistas y soluciones que realmente funcionan.",
 
-  estadisticas: {
-    proyectos: 3,
-    logros: 19,
-    desde: 2024
-  },
+  estadisticas: { proyectos: 3, logros: 19, desde: 2024 },
+
+  /* ---- PROYECTOS DESTACADOS ----
+     Pon tus imágenes en assets/proyectos/ y cambia la ruta aquí.
+     estado: "normal"       -> al hacer clic la tarjeta se agranda con efecto
+     estado: "proximamente" -> al hacer clic la imagen se difumina y dice "Próximamente"
+  */
+  proyectos: [
+    {
+      imagen: "assets/proyectos/proyecto1.jpg",
+      etiqueta: "Roblox",
+      titulo: "Dashboard Admin",
+      descripcion: "Panel administrativo con estadísticas en tiempo real.",
+      estado: "normal"
+    },
+    {
+      imagen: "assets/proyectos/proyecto2.jpg",
+      etiqueta: "Roblox Studio",
+      titulo: "Proyecto 1",
+      descripcion: "Landing page moderna para startups y negocios.",
+      estado: "normal"
+    },
+    {
+      imagen: "assets/proyectos/proyecto3.jpg",
+      etiqueta: "Node.js",
+      titulo: "Bot de Discord",
+      descripcion: "Bot multipropósito con comandos, música y gestión de servidores.",
+      estado: "proximamente"
+    }
+  ],
 
   redes: {
     youtube:  "https://www.youtube.com/channel/UChoMBqKowU2yNp2EENAwkbQ",
@@ -20,24 +47,30 @@ const CONFIG = {
     github:   "https://github.com/JxVe",
     steam:    null
   },
-
-  // Discord no tiene un link de perfil público, así que al hacer clic
-  // se copia este usuario al portapapeles.
   discordUsuario: "jxxve",
 
   musica: {
     youtubeId: "5-bvIn0rF5E",
     cancion: "Sigo Dañándoles los Días",
-    artista: "Alexio “La Bestia”"
+    artista: "Alexio \u201CLa Bestia\u201D"
   },
 
-
-  // Lenguajes dominados: se muestran al hacer clic con efecto glitch
+  /* ---- LENGUAJES DOMINADOS ----
+     Pon tus imágenes en assets/lenguajes/ y cambia la ruta aquí.
+     Al hacer clic se muestra el porcentaje con efecto glitch.
+  */
   lenguajes: [
-    { id: "js",   nombre: "JavaScript", icono: "JS",   porcentaje: 50 },
-    { id: "css",  nombre: "CSS",        icono: "{ }",  porcentaje: 60 },
-    { id: "html", nombre: "HTML",       icono: "</>",  porcentaje: 90 },
-    { id: "lua",  nombre: "Lua",        icono: "λ",    porcentaje: 82 }
+    { nombre: "JavaScript", imagen: "assets/lenguajes/javascript.png", porcentaje: 50 },
+    { nombre: "CSS",        imagen: "assets/lenguajes/css.png",        porcentaje: 60 },
+    { nombre: "HTML",       imagen: "assets/lenguajes/html.png",       porcentaje: 90 },
+    { nombre: "Lua",        imagen: "assets/lenguajes/lua.png",        porcentaje: 82 }
+  ],
+
+  /* ---- EXPERIENCIA (3 pliegues) ---- */
+  experiencia: [
+    { periodo: "2024 - Actualidad", titulo: "Desarrollador Frontend Freelance", texto: "Trabajando en proyectos personales y para clientes alrededor del mundo." },
+    { periodo: "2023 - 2024", titulo: "Desarrollo de proyectos personales", texto: "Aprendiendo, practicando y creando soluciones reales." },
+    { periodo: "2022 - 2023", titulo: "Inicios en Roblox Studio", texto: "Primeros pasos construyendo experiencias y sistemas dentro de Roblox." }
   ]
 };
 /* =========================================================== */
@@ -53,17 +86,7 @@ const ICONOS = {
   github: `<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.4-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.5-1.3.1-2.7 0 0 .8-.3 2.8 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .6 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .3.3.6.9.6 1.9v2.8c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg>`
 };
 
-/* Nombre visible de cada red, para mostrarlo en el tooltip al hacer clic */
-const NOMBRES_REDES = {
-  youtube: "YouTube",
-  discord: "Discord",
-  instagram: "Instagram",
-  spotify: "Spotify",
-  roblox: "Roblox",
-  tiktok: "TikTok",
-  github: "GitHub",
-  steam: "Steam"
-};
+const NOMBRES_REDES = { youtube:"YouTube", discord:"Discord", instagram:"Instagram", spotify:"Spotify", roblox:"Roblox", tiktok:"TikTok", github:"GitHub", steam:"Steam" };
 
 /* ---------- Referencias DOM ---------- */
 const pantallaInicio = document.getElementById("pantalla-inicio");
@@ -77,23 +100,21 @@ const ubicacion = document.getElementById("ubicacion");
 /* ---------- Rellenar datos desde CONFIG ---------- */
 document.getElementById("descripcion").textContent = CONFIG.descripcion;
 document.getElementById("texto-ubicacion").textContent = CONFIG.ubicacion;
+document.getElementById("frase-corta").textContent = CONFIG.fraseCorta;
+document.getElementById("acerca-texto").textContent = CONFIG.acercaDeMi;
 document.getElementById("stat-proyectos").textContent = CONFIG.estadisticas.proyectos;
 document.getElementById("stat-logros").textContent = CONFIG.estadisticas.logros;
 document.getElementById("stat-desde").textContent = CONFIG.estadisticas.desde;
 document.getElementById("reproductor-artista").textContent = CONFIG.musica.artista;
 
-/* ---------- Redes con animación al hacer clic ---------- */
+/* ---------- Redes (misma lógica que ya teníamos) ---------- */
 Object.entries(CONFIG.redes).forEach(([nombreRed, link]) => {
   const item = document.createElement(link ? "a" : "div");
   item.className = "red-icono";
   item.innerHTML = ICONOS[nombreRed] || "";
 
-  if (link) {
-    item.href = link;
-    item.target = "_blank";
-  } else {
-    item.style.cursor = "pointer";
-  }
+  if (link) { item.href = link; item.target = "_blank"; }
+  else { item.style.cursor = "pointer"; }
 
   item.addEventListener("click", (e) => {
     item.classList.remove("pop");
@@ -107,21 +128,14 @@ Object.entries(CONFIG.redes).forEach(([nombreRed, link]) => {
       copiarUsuarioDiscord(item, nombreVisible);
       return;
     }
-
-    if (!link) {
-      mostrarTooltip(item, `${nombreVisible} · Próximamente`);
-    } else {
-      mostrarTooltip(item, nombreVisible);
-    }
+    if (!link) mostrarTooltip(item, `${nombreVisible} · Próximamente`);
+    else mostrarTooltip(item, nombreVisible);
   });
 
   redesContenedor.appendChild(item);
 });
 
-/* ---------- Ubicación clickeable ---------- */
-ubicacion.addEventListener("click", () => {
-  mostrarTooltip(ubicacion, "Localización: Próximamente");
-});
+ubicacion.addEventListener("click", () => mostrarTooltip(ubicacion, "Localización: Próximamente"));
 
 function copiarUsuarioDiscord(elemento, nombreVisible) {
   const usuario = CONFIG.discordUsuario;
@@ -162,7 +176,6 @@ function crearTypewriterLoop(texto, actualizar, velEscribir = 150, velBorrar = 1
   }
   paso();
 }
-
 crearTypewriterLoop(CONFIG.nombre, (txt) => nombreUsuario.textContent = txt);
 crearTypewriterLoop("@" + CONFIG.nombre, (txt) => document.title = txt || "…");
 
@@ -185,30 +198,20 @@ function actualizarVistas() {
   contadorVistas.textContent = vistas;
 }
 
-/* ---------- Música con YouTube ---------- */
+/* ---------- Música con YouTube (INTACTA) ---------- */
 let player = null;
 
 function onYouTubeIframeAPIReady() {
   player = new YT.Player("youtube-player", {
     videoId: CONFIG.musica.youtubeId,
-    playerVars: {
-      controls: 0,
-      disablekb: 1,
-      modestbranding: 1,
-      rel: 0,
-      iv_load_policy: 3,
-      fs: 0
-    },
+    playerVars: { controls:0, disablekb:1, modestbranding:1, rel:0, iv_load_policy:3, fs:0 },
     events: {
-      onReady: () => {
-        document.getElementById("reproductor-titulo").textContent = CONFIG.musica.cancion;
-      }
+      onReady: () => { document.getElementById("reproductor-titulo").textContent = CONFIG.musica.cancion; }
     }
   });
 }
 
 const botonPlayPause = document.getElementById("boton-play-pause");
-const estadoMusica = document.getElementById("ondas");
 const ondasEl = document.getElementById("ondas");
 
 botonPlayPause.addEventListener("click", () => {
@@ -229,17 +232,14 @@ botonPlayPause.addEventListener("click", () => {
   }
 });
 
-/* ---------- Controles secundarios (aún sin lista de reproducción) ---------- */
-["boton-shuffle", "boton-anterior", "boton-siguiente", "boton-repetir"].forEach((id) => {
+["boton-anterior", "boton-siguiente"].forEach((id) => {
   const boton = document.getElementById(id);
   boton.addEventListener("click", () => mostrarTooltip(boton, "Próximamente"));
 });
 
-/* ---------- Entrada a la página ---------- */
 botonEntrar.addEventListener("click", () => {
   pantallaInicio.classList.add("oculto");
   contenido.classList.remove("oculto");
-
   actualizarVistas();
 
   if (player && typeof player.playVideo === "function") {
@@ -249,21 +249,16 @@ botonEntrar.addEventListener("click", () => {
   }
 });
 
-/* ---------- Botón "Ver más" (Acerca de mí) ---------- */
 document.getElementById("btn-ver-mas").addEventListener("click", (e) => {
-  mostrarTooltip(e.target.parentElement, "Próximamente");
+  mostrarTooltip(e.target, "Próximamente");
 });
 
-
-/* ======================================================================
-   BLOQUE — Barra de progreso del reproductor
-   ====================================================================== */
+/* ---------- Barra de progreso ---------- */
 function formatearTiempo(segundos) {
   const m = Math.floor(segundos / 60);
   const s = Math.floor(segundos % 60).toString().padStart(2, "0");
   return `${m}:${s}`;
 }
-
 setInterval(() => {
   if (!player || typeof player.getCurrentTime !== "function") return;
   const actual = player.getCurrentTime();
@@ -274,9 +269,44 @@ setInterval(() => {
   document.getElementById("tiempo-total").textContent = formatearTiempo(total);
 }, 500);
 
+/* ======================================================================
+   NUEVO — Proyectos destacados (clic para agrandar / próximamente)
+   ====================================================================== */
+(function iniciarProyectos() {
+  const contenedor = document.getElementById("proyectos-contenedor");
+  if (!contenedor) return;
+
+  CONFIG.proyectos.forEach((p) => {
+    const card = document.createElement("div");
+    card.className = "proyecto-card";
+
+    card.innerHTML = `
+      <div class="proyecto-media">
+        <span class="proyecto-etiqueta">${p.etiqueta}</span>
+        <img src="${p.imagen}" alt="${p.titulo}" class="proyecto-imagen">
+        <div class="proyecto-overlay">Próximamente</div>
+      </div>
+      <div class="proyecto-texto">
+        <p class="proyecto-titulo">${p.titulo}</p>
+        <p class="proyecto-descripcion">${p.descripcion}</p>
+      </div>
+    `;
+
+    const media = card.querySelector(".proyecto-media");
+    media.addEventListener("click", () => {
+      if (p.estado === "proximamente") {
+        card.classList.toggle("difuminada");
+      } else {
+        card.classList.toggle("ampliada");
+      }
+    });
+
+    contenedor.appendChild(card);
+  });
+})();
 
 /* ======================================================================
-   BLOQUE — Lenguajes dominados (glitch al mostrar el porcentaje)
+   NUEVO — Lenguajes dominados con imágenes (glitch al mostrar %)
    ====================================================================== */
 (function iniciarLenguajes() {
   const contenedor = document.getElementById("lenguajes-contenedor");
@@ -287,7 +317,7 @@ setInterval(() => {
     item.className = "tech-item";
     item.type = "button";
     item.innerHTML = `
-      <span class="tech-icono">${lenguaje.icono}</span>
+      <img src="${lenguaje.imagen}" alt="${lenguaje.nombre}" class="tech-icono-img">
       <span class="tech-nombre">${lenguaje.nombre}</span>
       <span class="tech-porcentaje">${lenguaje.porcentaje}%</span>
     `;
@@ -295,30 +325,29 @@ setInterval(() => {
     item.addEventListener("click", () => {
       if (item.classList.contains("en-transicion")) return;
       item.classList.add("en-transicion", "glitch");
-
-      setTimeout(() => {
-        item.classList.toggle("mostrar-porcentaje");
-      }, 220);
-
-      setTimeout(() => {
-        item.classList.remove("glitch", "en-transicion");
-      }, 480);
+      setTimeout(() => item.classList.toggle("mostrar-porcentaje"), 220);
+      setTimeout(() => item.classList.remove("glitch", "en-transicion"), 480);
     });
 
     contenedor.appendChild(item);
   });
 })();
 
-
 /* ======================================================================
-   BLOQUE — Parallax sutil del texto de fondo "JXXVE"
+   NUEVO — Experiencia (timeline dinámico, 3 pliegues)
    ====================================================================== */
-(function iniciarParallaxFondo() {
-  const fondo = document.querySelector("[data-parallax]");
-  if (!fondo) return;
-  window.addEventListener("mousemove", (e) => {
-    const x = (e.clientX / window.innerWidth) - 0.5;
-    const y = (e.clientY / window.innerHeight) - 0.5;
-    fondo.style.transform = `rotate(-3deg) skewX(-6deg) translate(${x * 8}px, ${y * 8}px)`;
+(function iniciarExperiencia() {
+  const contenedor = document.getElementById("experiencia-contenedor");
+  if (!contenedor) return;
+
+  CONFIG.experiencia.forEach((exp) => {
+    const item = document.createElement("div");
+    item.className = "timeline-item";
+    item.innerHTML = `
+      <p class="timeline-periodo">${exp.periodo}</p>
+      <p class="timeline-titulo">${exp.titulo}</p>
+      <p class="timeline-texto">${exp.texto}</p>
+    `;
+    contenedor.appendChild(item);
   });
 })();
