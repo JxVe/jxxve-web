@@ -7,7 +7,7 @@ const CONFIG = {
   estadisticas: {
     proyectos: 3,
     logros: 3,
-    desde: 2024
+    desde: 2023
   },
 
   redes: {
