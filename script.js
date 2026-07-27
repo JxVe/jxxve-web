@@ -4,7 +4,7 @@ const CONFIG = {
   descripcion: "Developer · Designer · R/S",
   ubicacion: "Perú",
   fraseCorta: "No sigo caminos. Creo los míos.",
-  acercaDeMi: "Desarrollador frontend en constante crecimiento, apasionado por construir interfaces modernas, intuitivas y de alto rendimiento. Disfruto aprender nuevas tecnologías, mejorar mis habilidades día a día y crear soluciones con código limpio, diseño minimalista y una experiencia de usuario cuidada.",
+  acercaDeMi: "Desarrollador frontend apasionado por crear experiencias digitales modernas, rápidas y atractivas. Me enfoco en escribir código limpio, diseños minimalistas y soluciones que realmente funcionan.",
 
   estadisticas: { proyectos: 3, logros: 19, desde: 2024 },
 
@@ -17,22 +17,22 @@ const CONFIG = {
     {
       imagen: "assets/proyectos/proyecto1.jpg",
       etiqueta: "Roblox",
-      titulo: "01 · Sandeo Club",
-      descripcion: "Plataforma desarrollada para una comunidad con un diseño moderno, enfoque en la experiencia del usuario y funcionalidades personalizadas. Un proyecto pensado para ofrecer una navegación rápida, intuitiva y escalable.",
+      titulo: "Dashboard Admin",
+      descripcion: "Panel administrativo con estadísticas en tiempo real.",
       estado: "normal"
     },
     {
       imagen: "assets/proyectos/proyecto2.jpg",
       etiqueta: "Roblox Studio",
-      titulo: "02 · Sistemas Personales",
-      descripcion: "Colección de sistemas desarrollados para juegos, incluyendo rachas, comandos, interfaces (UI) y otras herramientas personalizadas. El proyecto continúa en constante mantenimiento y seguirá recibiendo nuevas funciones y mejoras.",
-      estado: "En mantenimiento"
+      titulo: "Proyecto 1",
+      descripcion: "Landing page moderna para startups y negocios.",
+      estado: "normal"
     },
     {
       imagen: "assets/proyectos/proyecto3.jpg",
       etiqueta: "Node.js",
-      titulo: "03 · Bot de Discord",
-      descripcion: "Un nuevo proyecto ya está en planificación. La idea, el enfoque y los objetivos están definidos; el desarrollo comenzará próximamente para convertir el concepto en una experiencia funcional y de alta calidad.",
+      titulo: "Bot de Discord",
+      descripcion: "Bot multipropósito con comandos, música y gestión de servidores.",
       estado: "proximamente"
     }
   ],
@@ -61,16 +61,16 @@ const CONFIG = {
   */
   lenguajes: [
     { nombre: "JavaScript", imagen: "assets/lenguajes/javascript.png", porcentaje: 50 },
-    { nombre: "CSS",        imagen: "assets/lenguajes/css.png",        porcentaje: 50 },
-    { nombre: "HTML",       imagen: "assets/lenguajes/html.png",       porcentaje: 30 },
-    { nombre: "Lua",        imagen: "assets/lenguajes/lua.png",        porcentaje: 72 }
+    { nombre: "CSS",        imagen: "assets/lenguajes/css.png",        porcentaje: 60 },
+    { nombre: "HTML",       imagen: "assets/lenguajes/html.png",       porcentaje: 90 },
+    { nombre: "Lua",        imagen: "assets/lenguajes/lua.png",        porcentaje: 82 }
   ],
 
   /* ---- EXPERIENCIA (3 pliegues) ---- */
   experiencia: [
-    { periodo: "2026 - Actualidad", titulo: "Desarrollando proyectos personales y para clientes mientras continúo perfeccionando mis habilidades, explorando nuevas tecnologías y creando interfaces modernas con un enfoque en código limpio y una excelente experiencia de usuario." },
-    { periodo: "2025 - 2026", titulo: "Desarrollo de Bubaloo", texto: "Aprendiendo, practicando y creando experiencias en Roblox" },
-    { periodo: "2024 - 2025", titulo: "Inicios en Roblox Studio", texto: "Primera experiencia en roblox llamado Chat De Voz Peruano. Una de mis primeras aventuras en el mundo de la programación y creacion conjunto a un equipo muy amigable e innolvidable - Leo & Luan }
+    { periodo: "2024 - Actualidad", titulo: "Desarrollador Frontend Freelance", texto: "Trabajando en proyectos personales y para clientes alrededor del mundo." },
+    { periodo: "2023 - 2024", titulo: "Desarrollo de proyectos personales", texto: "Aprendiendo, practicando y creando soluciones reales." },
+    { periodo: "2022 - 2023", titulo: "Inicios en Roblox Studio", texto: "Primeros pasos construyendo experiencias y sistemas dentro de Roblox." }
   ]
 };
 /* =========================================================== */
