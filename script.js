@@ -232,7 +232,7 @@ botonEntrar.addEventListener("click", () => {
 
 /* ---------- Botón "Ver más" (Acerca de mí) ---------- */
 document.getElementById("btn-ver-mas").addEventListener("click", (e) => {
-  mostrarTooltip(e.target.parentElement, "Próximamente");
+  mostrarTooltip(e.target.parentElement, "Tranquila, aun lo ando implementando");
 });
 
 
