@@ -3,7 +3,7 @@ const CONFIG = {
   nombre: "Jxxve",
   descripcion: "Developer · Designer · R/S",
   ubicacion: "Perú",
-  fraseCorta: "No sigo caminos. Creo los míos.",
+  fraseCorta: "El tiempo pone a cada quien en su lugar.     -Alessio La Bruja",
   acercaDeMi: "Desarrollador frontend apasionado por crear experiencias digitales modernas, rápidas y atractivas. Actualmente continúo en constante aprendizaje, perfeccionando mis habilidades y explorando nuevas tecnologías para desarrollar soluciones con código limpio, diseño minimalista y una excelente experiencia de usuario.",
 
   estadisticas: { proyectos: 3, logros: 19, desde: 2024 },
