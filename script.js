@@ -1,7 +1,7 @@
 /* ============ CONFIGURACIÓN — EDITA SOLO AQUÍ ============ */
 const CONFIG = {
   nombre: "Jxxve",
-  descripcion: "Builder · Designer · Roblox",
+  descripcion: "Developer · Designer · CEO • Aetlis Studios",
   ubicacion: "Perú",
 
   estadisticas: {
