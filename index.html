@@ -98,6 +98,9 @@
 
     <!-- REPRODUCTOR DE MÚSICA -->
     <section class="panel reproductor" id="panel-musica">
+      <div id="youtube-player" class="reproductor-video-fondo"></div>
+      <div class="reproductor-video-overlay" aria-hidden="true"></div>
+
       <video src="assets/actividad.mp4" class="reproductor-portada" id="reproductor-portada" autoplay muted loop playsinline></video>
 
       <div class="reproductor-cuerpo">
@@ -154,8 +157,6 @@
   </main>
 
 </div>
-
-<div id="youtube-player"></div>
 
 <script src="https://www.youtube.com/iframe_api"></script>
 <script src="script.js"></script>
