@@ -14,7 +14,12 @@
 }
 
 html{ scroll-behavior:smooth; }
-body{ background:var(--bg); color:var(--texto); min-height:100vh; overflow-x:hidden; }
+body{
+  background:
+    linear-gradient(180deg, rgba(6,5,5,0.82), rgba(6,5,5,0.93)),
+    url('assets/fondo.jpg') center/cover no-repeat fixed;
+  color:var(--texto); min-height:100vh; overflow-x:hidden;
+}
 
 .oculto{ display:none !important; }
 
