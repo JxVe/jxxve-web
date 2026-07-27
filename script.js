@@ -172,7 +172,14 @@ let player = null;
 function onYouTubeIframeAPIReady() {
   player = new YT.Player("youtube-player", {
     videoId: CONFIG.musica.youtubeId,
-    playerVars: { controls: 0, disablekb: 1 },
+    playerVars: {
+      controls: 0,
+      disablekb: 1,
+      modestbranding: 1,
+      rel: 0,
+      iv_load_policy: 3,
+      fs: 0
+    },
     events: {
       onReady: () => {
         document.getElementById("reproductor-titulo").textContent = CONFIG.musica.cancion;
