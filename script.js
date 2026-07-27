@@ -5,9 +5,9 @@ const CONFIG = {
   ubicacion: "Perú",
 
   estadisticas: {
-    proyectos: 20,
-    logros: 7,
-    desde: 2021
+    proyectos: 3,
+    logros: 19,
+    desde: 2024
   },
 
   redes: {
